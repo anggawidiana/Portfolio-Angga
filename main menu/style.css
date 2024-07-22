@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Source";
+  src: url("source-sans-pro.black.ttf");
+}
+
+body {
+  background-color: white;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem;
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  -webkit-box-shadow: 0px 17px 80px -1px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 17px 80px -1px rgba(66, 68, 90, 1);
+  box-shadow: 0px 17px 80px -1px rgb(212, 212, 212);
+}
+
+.navbar h1 {
+  color: #111111;
+  font-size: 18px;
+  padding-left: 4rem;
+  font-family: "Source", sans-serif;
+  font-stretch: 100%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.navbar .navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  margin: auto 4rem;
+}
+
+.navbar .navbar-nav a {
+  color: #5c5c5c;
+  font-family: "Source";
+  font-size: 16px;
+  text-transform: uppercase;
+  font-style: bold;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #3b3bcc;
+}
+
+/* Content Start */
+/* Content1 Start */
+.container .content1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    ),
+    url("img/abstract_background_with_a_low_poly_design_0107.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 560px;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container .content1 h1 {
+  font-size: 60px;
+  color: #111111;
+  font-family: "Source", sans-serif;
+  font-weight: 1500;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.container .content1 p {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 22px;
+  width: 70%;
+  text-align: center;
+  color: #333333;
+}
+/* Content1 End */
+/* Content End */
