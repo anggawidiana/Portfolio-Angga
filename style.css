@@ -6,13 +6,20 @@
   list-style: none;
 }
 
+:root {
+  --white: #ffffffff;
+  --russian-violet: #0b0033ff;
+  --blush: #e54f6dff;
+  --claret: #832232ff;
+  --persian-orange: #ce8964ff;
+}
+
 @font-face {
   font-family: "Source";
   src: url("source-sans-pro.black.ttf");
 }
 
 body {
-  background-color: white;
   font-family: "Titillium Web", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -21,25 +28,33 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.7rem;
-  background-color: whitesmoke;
+  justify-content: center;
+  padding: 4rem;
+  background-color: var(--russian-violet);
   position: sticky;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 9999;
-  -webkit-box-shadow: 0px 17px 80px -1px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 0px 17px 80px -1px rgba(66, 68, 90, 1);
-  box-shadow: 0px 17px 80px -1px rgb(212, 212, 212);
 }
 
 .navbar h1 {
-  color: #111111;
-  font-size: 18px;
+  color: var(--white);
+  font-size: 1.6rem;
   padding-left: 4rem;
   font-family: "Source", sans-serif;
   font-stretch: 100%;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
+  position: absolute;
+  left: 2%;
+  background-color: var(--blush);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.navbar h1:hover {
+  opacity: 0.8;
 }
 
 .navbar .navbar-nav {
@@ -51,43 +66,111 @@ body {
 }
 
 .navbar .navbar-nav a {
-  color: #5c5c5c;
+  color: var(--white);
   font-family: "Source";
-  font-size: 16px;
+  font-size: 1.4rem;
   text-transform: uppercase;
   font-style: bold;
   font-weight: 400;
   letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
 .navbar .navbar-nav a:hover {
-  color: #3b3bcc;
+  color: var(--blush);
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+}
+
+.navbar #check {
+  display: none;
+}
+
+.navbar .icons {
+  width: 2rem;
+  height: 2rem;
+  display: none;
+  position: absolute;
+  right: 2%;
+}
+
+.icons #menu-icon,
+.icons #close-icon {
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#check:checked ~ .icons #menu-icon {
+  transform: rotate(45deg) scale(0);
+  opacity: 0;
+}
+
+#check:checked ~ .icons #close-icon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.icons #close-icon {
+  transform: rotate(-45deg) scale(0);
+  opacity: 0;
 }
 
 /* Content Start */
 /* Content1 Start */
 .container .content1 {
-  background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    ),
-    url("img/abstract_background_with_a_low_poly_design_0107.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 560px;
+  padding-top: 6rem;
+  padding-bottom: 10rem;
   flex-direction: column;
   gap: 2rem;
+  background: var(--russian-violet);
+  background: linear-gradient(
+    180deg,
+    var(--russian-violet) 70%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
 }
 
 .container .content1 h1 {
   font-size: 60px;
-  color: #111111;
+  color: var(--white);
   font-family: "Source", sans-serif;
   font-weight: 1500;
   font-style: normal;
   text-transform: uppercase;
+}
+
+.container .content1 h1 span {
+  color: var(--blush);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.8) 30%,
+    #fff 50%,
+    rgba(0, 0, 0, 0.8) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
 
 .container .content1 p {
@@ -97,7 +180,47 @@ body {
   font-size: 22px;
   width: 70%;
   text-align: center;
-  color: #333333;
+  color: var(--white);
 }
 /* Content1 End */
 /* Content End */
+
+/* Media Query Start */
+@media (max-width: 768px) {
+  .navbar h1 {
+    font-size: 80%;
+    left: 5%;
+  }
+
+  .navbar .icons {
+    display: inline-flex;
+    right: 5%;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: var(--russian-violet);
+    backdrop-filter: blur(50px);
+    padding: 2rem 0;
+    opacity: 0;
+    gap: 1rem;
+    overflow: hidden;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  #check:checked ~ .navbar-nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar .navbar-nav li {
+    margin-bottom: 1rem;
+  }
+}
+/* Media Query End */
