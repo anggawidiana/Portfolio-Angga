@@ -26,7 +26,7 @@ body {
   font-style: normal;
   background-image: url(img/bgport.png);
 }
-
+/* Navbar Start */
 .navbar {
   display: flex;
   align-items: center;
@@ -103,6 +103,38 @@ body {
   transform: rotate(-45deg) scale(0);
   opacity: 0;
 }
+/* Navbar End */
+
+/* Social Start */
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-purple);
+  width: 10%;
+  padding: 1rem;
+  position: fixed;
+  bottom: 1%;
+  left: 1%;
+}
+
+.social ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social ul li a {
+  color: var(--white);
+  font-size: 1.4rem;
+  transition: 0.3s ease;
+}
+
+.social ul li a:hover {
+  color: var(--auburn);
+}
+/* Social End */
 
 /* Content Start */
 /* Content1 Start */
@@ -118,7 +150,7 @@ body {
 
 .container .content1 .h1-container {
   overflow: hidden;
-  width: auto;
+  width: 800px;
 }
 
 .container .content1 h1 {
@@ -128,6 +160,11 @@ body {
   font-weight: 1500;
   font-style: normal;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.container .content1 h1 .first-text {
+  font-size: 4rem;
 }
 
 .container .content1 h1 span {
@@ -143,6 +180,7 @@ body {
   );
   -webkit-mask-size: 200%;
   animation: shine 2s linear infinite;
+  font-size: 6rem;
 }
 
 .container .content1 h1 span::before {
@@ -200,6 +238,10 @@ body {
     position: absolute;
   }
 
+  .navbar {
+    position: absolute;
+  }
+
   .navbar .navbar-nav {
     position: absolute;
     top: 100%;
@@ -225,6 +267,10 @@ body {
   .navbar .navbar-nav li {
     margin-bottom: 1rem;
   }
+
+  .social {
+    width: 20%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -233,13 +279,38 @@ body {
     position: sticky;
   }
 
-  .container .content1 .h1-container h1,
+  .container .content1 h1 .first-text {
+    font-size: 2rem;
+  }
+
   .container .content1 .h1-container h1 span {
     max-width: 100%;
     width: 100%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
   /* Konten1 End */
+}
+
+@media (max-width: 400px) {
+  .container .content1 .h1-container .sec-text {
+    width: auto;
+  }
+
+  .social {
+    width: 30%;
+    padding: 0.8rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .social ul li a {
+    color: var(--white);
+    font-size: 1.3rem;
+  }
+
+  .container .content1 p {
+    font-size: 20px;
+  }
 }
 /* Media Query End */
