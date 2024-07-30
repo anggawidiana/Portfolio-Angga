@@ -26,6 +26,21 @@
       href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- fONTS -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Fonticon -->
     <script
       src="https://kit.fontawesome.com/9cb8770492.js"
@@ -35,11 +50,6 @@
   <body>
     <!-- Navbar Start -->
     <nav class="navbar">
-      <h1 class="owner">
-        AGUNG
-        <br />
-        ANGGA
-      </h1>
       <input
         type="checkbox"
         id="check"
@@ -55,7 +65,7 @@
             y="0px"
             id="menu-icon"
             viewBox="0 0 50 50"
-            fill="#fff"
+            fill="#0f0b24"
           >
             <path
               d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z"
@@ -66,7 +76,7 @@
             x="0px"
             y="0px"
             id="close-icon"
-            fill="#fff"
+            fill="#0f0b24"
             viewBox="0 0 50 50"
           >
             <path
@@ -88,18 +98,33 @@
     <main class="container">
       <!-- Konten1 Start -->
       <section class="content1">
-        <h1>
-          Hallo, I'am
-          <span>Agung Angga</span>
-        </h1>
+        <div class="h1-container">
+          <h1>
+            Hi, I'am
+            <span class="sec-text">Agung Angga</span>
+          </h1>
+        </div>
         <p>
           An Information Systems student aspiring to become a Data Scientist,
           focusing on data analysis and developing data-driven solutions to
           enhance business decision-making.
         </p>
+
+        <a
+          href="#about-us"
+          class="scroll-down"
+        >
+          <img
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios/50/circled-down-2.png"
+            alt="circled-down-2"
+          />
+        </a>
       </section>
       <!-- Konten1 End -->
     </main>
     <!-- Konten End -->
+    <script src="scripts.js"></script>
   </body>
 </html>
