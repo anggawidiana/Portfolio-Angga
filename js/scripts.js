@@ -10,3 +10,19 @@ const textLoad = () => {
 
 textLoad();
 setInterval(textLoad, 8000);
+
+// navbar right start
+window.addEventListener("scroll", () => {
+  const navbar = document.getElementById("navbar-sec");
+  const aboutSection = document.getElementById("about-me");
+
+  const aboutSectionTop = aboutSection.offsetTop;
+  const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+  if (scrollPosition >= aboutSectionTop) {
+    navbar.classList.add("left");
+  } else {
+    navbar.classList.remove("left");
+  }
+});
+// navbar right end

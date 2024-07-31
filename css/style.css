@@ -66,6 +66,28 @@ body {
   color: var(--auburn);
 }
 
+.navbar.left {
+  width: auto;
+  height: 100%;
+  top: 0;
+  left: 2%;
+  right: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  position: fixed;
+  transition: 1s ease-in-out;
+}
+
+.navbar.left ul {
+  flex-direction: column;
+  position: absolute;
+}
+
+.navbar.left ul li {
+  margin: 1rem 0;
+}
+
 .icon-wrapper {
   position: relative;
   display: flex;
@@ -107,6 +129,25 @@ body {
   transform: rotate(-45deg) scale(0);
   opacity: 0;
 }
+
+.navbar.right {
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.navbar.right .navbar-nav {
+  flex-direction: column;
+}
+
+.navbar.right .navbar-nav li {
+  margin: 1rem 0;
+}
 /* Navbar End */
 
 /* Social Start */
@@ -114,12 +155,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--dark-purple);
-  width: 10%;
   padding: 1rem;
+  width: 10%;
   position: fixed;
-  bottom: 1%;
-  left: 1%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
 }
 
 .social ul {
@@ -127,11 +169,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  flex-direction: column;
 }
 
 .social ul li a {
-  color: var(--white);
-  font-size: 1.4rem;
+  color: var(--dark-purple);
+  font-size: 1.8rem;
   transition: 0.3s ease;
 }
 
@@ -176,13 +219,13 @@ body {
   color: var(--auburn);
   display: inline-block;
   position: relative;
-  -webkit-mask-image: linear-gradient(
+  mask-image: linear-gradient(
     -75deg,
     rgba(0, 0, 0, 0.8) 30%,
     #fff 50%,
     rgba(0, 0, 0, 0.8) 70%
   );
-  -webkit-mask-size: 200%;
+  mask-size: 200%;
   animation: shine 2s linear infinite, typing 4s steps(12) infinite;
   font-size: 6rem;
   white-space: nowrap;
@@ -246,7 +289,8 @@ body {
 /* Content1 End */
 /* Content2 Start */
 .container .content2 {
-  padding-top: 8rem;
+  padding-top: 10rem;
+  height: 800px;
 }
 
 .container .content2 h1 {
@@ -271,12 +315,12 @@ body {
 
 .container .content2 .about-sec img {
   width: 30%;
-  border-radius: 1rem;
+  border-radius: 50%;
 }
 
 .container .content2 .about-sec p {
   width: 30%;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 /* Content2 End */
 /* Content End */
