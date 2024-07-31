@@ -62,30 +62,46 @@ body {
   transition: 0.3s ease;
 }
 
+.navbar .navbar-nav a .nav-icon {
+  opacity: 0;
+}
+
 .navbar .navbar-nav a:hover {
   color: var(--auburn);
 }
 
 .navbar.left {
-  width: auto;
+  width: 8%;
   height: 100%;
   top: 0;
-  left: 2%;
+  left: 0;
   right: auto;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
   position: fixed;
   transition: 1s ease-in-out;
+  background-color: var(--dark-purple);
 }
 
-.navbar.left ul {
+.navbar.left .navbar-nav {
   flex-direction: column;
   position: absolute;
+  width: 20rem;
 }
 
-.navbar.left ul li {
+.navbar.left .navbar-nav li {
   margin: 1rem 0;
+}
+
+.navbar.left .navbar-nav li a .icon-nav {
+  display: none;
+}
+
+.navbar.left .navbar-nav li a .nav-icon {
+  opacity: 1;
+  font-size: 2rem;
+  color: var(--white);
 }
 
 .icon-wrapper {
@@ -147,6 +163,10 @@ body {
 
 .navbar.right .navbar-nav li {
   margin: 1rem 0;
+}
+
+.navbar.right .navbar-nav li a {
+  width: 8rem;
 }
 /* Navbar End */
 
